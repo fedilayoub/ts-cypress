@@ -2,7 +2,8 @@ import TitleSection from '@/components/landing-page/title-section';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import React from 'react';
-import Banner from '../../../public/appBanner.webp';
+import Banner from '../../../public/appBanner.png';
+import Banner_2 from '../../../public/cal.png';
 import { CLIENTS } from '@/lib/constants';
 
 const HomePage = () => {
@@ -27,18 +28,57 @@ const HomePage = () => {
         </div>
       </section>
       <section className="relative">
-        <div className="overflow-hidden flex after:content-[''] after:dark:from-brand-dark after:to-transparent after:from-background after:bg-gradient-to-l after:left-0 after:top-0 after:bottom-0 after:w-20 after:z-10 after:absolute  before:content-[''] before:dark:from-brand-dark before:to-transparent before:from-background before:bg-gradient-to-r before:right-0 before:top-0 before:bottom-0 before:w-20 before:z-10 before:absolute">
+        <div
+          className="overflow-hidden
+          flex
+          after:content-['']
+          after:dark:from-brand-dark
+          after:to-transparent
+          after:from-background
+          after:bg-gradient-to-l
+          after:right-0
+          after:bottom-0
+          after:top-0
+          after:w-20
+          after:z-10
+          after:absolute
+
+          before:content-['']
+          before:dark:from-brand-dark
+          before:to-transparent
+          before:from-background
+          before:bg-gradient-to-r
+          before:left-0
+          before:top-0
+          before:bottom-0
+          before:w-20
+          before:z-10
+          before:absolute
+        "
+        >
           {[...Array(2)].map((arr) => (
-            <div key={arr} className="flex flex-nowrap animate-silde">
+            <div
+              key={arr}
+              className="flex
+                flex-nowrap
+                animate-silde
+          "
+            >
               {CLIENTS.map((client) => (
                 <div
                   key={client.alt}
-                  className="relative w-[200px] m-20 shrink-0 flex items-center"
+                  className=" relative
+                    w-[200px]
+                    m-20
+                    shrink-0
+                    flex
+                    items-center
+                  "
                 >
                   <Image
                     src={client.logo}
                     alt={client.alt}
-                    width={200}
+                    width={150}
                     className="object-contain max-w-none"
                   />
                 </div>
@@ -46,6 +86,28 @@ const HomePage = () => {
             </div>
           ))}
         </div>
+      </section>
+      <section className="px-4 sm:px-6 justify-center items-center flex-col relative">
+        <div className="w-[30%]  blur-[120px] rounded-full h-32 top-22 absolute bg-brand-primaryBlue/50 -z-10 " />
+        <TitleSection
+          title="Keep track of your meetings all in one place"
+          subheading="Capture your ideas, thoughts, and meeting notes in a structured and organized manner"
+          pill="Features"
+        />
+        <div className="mt-10 max-w-[450px] flex justify-center itels-center relative sm:ml-0 rounded-2xl border-8 border-washed-purple-300 border-opacity-10 ">
+          <Image src={Banner_2} alt="Banner" className="rounded-2xl" />
+        </div>
+      </section>
+      <section className="relative">
+        <div className="w-full  blur-[120px] rounded-full h-32 top-56 absolute bg-brand-primaryBlue/50 -z-10 " />
+        <div className='mt-20 px-4 sm:px-6 flex flex-col overflow-x-hidden overflow-visible'>
+          <TitleSection
+          title="Trusted by all"
+          subheading="Join thousands of satisfied users who rely on our platform for thier professional productivity needs."
+          pill="Testimonials"
+        /> 
+        </div>
+       
       </section>
     </>
   );
